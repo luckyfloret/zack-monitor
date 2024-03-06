@@ -1,22 +1,27 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>com.hmg.monitor</groupId>
-        <artifactId>zack-monitor</artifactId>
-        <version>${revision}</version>
-    </parent>
 
+    <groupId>com.hmg.monitor</groupId>
     <artifactId>zack-dependencies</artifactId>
-    <packaging>jar</packaging>
+    <version>${revison}</version>
+    <packaging>pom</packaging>
 
     <name>zack-dependencies</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <asm.version>9.6</asm.version>
     </properties>
 
-    <dependencies>
-
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.ow2.asm</groupId>
+                <artifactId>asm</artifactId>
+                <version>${asm.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
