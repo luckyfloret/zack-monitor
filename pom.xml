@@ -1,26 +1,37 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.hmg.monitor</groupId>
-  <artifactId>zack-monitor</artifactId>
-  <version>${revision}</version>
-  <packaging>pom</packaging>
+    <groupId>com.hmg.monitor</groupId>
+    <artifactId>zack-monitor</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
 
-  <name>zack-monitor</name>
-  <url>http://maven.apache.org</url>
-  <modules>
-    <module>zack-module-core</module>
-    <module>zack-module-bytecode</module>
-    <module>zack-dependencies</module>
-  </modules>
+    <name>zack-monitor</name>
+    <modules>
+        <module>zack-module-core</module>
+        <module>zack-module-bytecode</module>
+        <module>zack-dependencies</module>
+    </modules>
 
-  <properties>
-    <revision>1.0-SNAPSHOT</revision>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <properties>
+        <revision>1.0-SNAPSHOT</revision>
+        <!-- maven相关 -->
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
 
-  <dependencies>
-
-  </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.hmg.monitor</groupId>
+                <artifactId>zack-dependencies</artifactId>
+                <version>${revison}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
