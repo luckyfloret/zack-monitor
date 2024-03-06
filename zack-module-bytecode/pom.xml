@@ -4,14 +4,13 @@
     <parent>
         <groupId>com.hmg.monitor</groupId>
         <artifactId>zack-monitor</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
 
-    <artifactId>zack-monitor-core</artifactId>
+    <artifactId>zack-module-bytecode</artifactId>
     <packaging>jar</packaging>
 
-    <name>zack-monitor-core</name>
-    <url>http://maven.apache.org</url>
+    <name>zack-monitor-bytecode</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
