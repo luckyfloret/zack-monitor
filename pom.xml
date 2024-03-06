@@ -11,6 +11,7 @@
   <url>http://maven.apache.org</url>
   <modules>
     <module>zack-monitor-core</module>
+    <module>zack-monitor-bytecode</module>
   </modules>
 
   <properties>
