@@ -18,6 +18,36 @@
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>com.hmg.monitor</groupId>
+            <artifactId>zack-module-bytecode</artifactId>
+            <version>${revision}</version>
+        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+
+                    <archive>
+                        <!--自动添加META-INF/MANIFEST.MF -->
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                        <manifestEntries>
+                            <Menifest-Version>1.0</Menifest-Version>
+                            <Main-Class>com.hmg.monitor.core.bootstrap.Attach</Main-Class>
+                            <Agent-Class>com.hmg.monitor.core.bootstrap.AgentBootstrap</Agent-Class>
+                            <Can-Redefine-Classes>true</Can-Redefine-Classes>
+                            <Can-Retransform-Classes>true</Can-Retransform-Classes>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
